@@ -1,2 +1,19 @@
 <h1>Student Show</h1>
 
+<p>Name: <%= @student.name %> || Age: <%= @student.age%> </p>
+
+<%= link_to "Update student", edit_student_path(@student) %>
+<br>
+<br>
+<%= button_to "Delete", student_path(@student), :method => :delete%>
+
+<h1>Courses</h1>
+<% @student.courses.each do |course| %>
+<%= course.name %>
+<br>
+<br>
+<%= button_to "Delete Course", enrollments_path(course), :method => :delete %>
+<br>
+<br>
+<% end %>
+

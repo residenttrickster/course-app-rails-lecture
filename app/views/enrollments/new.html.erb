@@ -1,0 +1,15 @@
+<h1> REGISTER PAGE </h1>
+
+
+<%= form_for @enrollment do |f| %>
+<%= f.label "Choose student" %>
+<%= collection_select :enrollment, :student_id, Student.all, :id, :name %>
+<br>
+<br>
+<%= f.label "Choose course" %>
+<%= collection_select :enrollment, :course_id, Course.all, :id, :name %>
+<br>
+<br>
+<%= f.submit %>
+<% end %>
+
